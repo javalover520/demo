@@ -1,0 +1,46 @@
+package io.renren.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Map;
+
+import io.renren.dao.SysOssDao;
+import io.renren.entity.SysOssEntity;
+import io.renren.service.SysOssService;
+
+@Service("sysOssService")
+public class SysOssServiceImpl implements SysOssService {
+	@Autowired
+	private SysOssDao sysOssDao;
+
+	public SysOssEntity queryObject(Long id) {
+		return sysOssDao.queryObject(id);
+	}
+
+	public List<SysOssEntity> queryList(Map<String, Object> map) {
+		return sysOssDao.queryList(map);
+	}
+
+	public int queryTotal(Map<String, Object> map) {
+		return sysOssDao.queryTotal(map);
+	}
+
+	public void save(SysOssEntity sysOss) {
+		sysOssDao.save(sysOss);
+	}
+
+	public void update(SysOssEntity sysOss) {
+		sysOssDao.update(sysOss);
+	}
+
+	public void delete(Long id) {
+		sysOssDao.delete(id);
+	}
+
+	public void deleteBatch(Long[] ids) {
+		sysOssDao.deleteBatch(ids);
+	}
+
+}
